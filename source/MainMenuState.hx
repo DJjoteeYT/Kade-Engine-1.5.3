@@ -91,15 +91,42 @@ class MainMenuState extends MusicBeatState
 
 		var tex = Paths.getSparrowAtlas('FNF_main_menu_assets');
 
-		for (i in 0...optionShit.length)
-		{
 			var menuItem:FlxSprite = new FlxSprite(0, FlxG.height * 1.6);
 			menuItem.frames = tex;
-			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
-			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
+			menuItem.animation.addByPrefix('idle', optionShit[0] + " basic", 24);
+			menuItem.animation.addByPrefix('selected', optionShit[0] + " white", 24);
 			menuItem.animation.play('idle');
-			menuItem.ID = i;
-			menuItem.screenCenter(X);
+			menuItem.ID = 0;
+			menuItems.add(menuItem);
+			menuItem.scrollFactor.set();
+			menuItem.antialiasing = true;
+			
+var menuItem:FlxSprite = new FlxSprite(1, FlxG.height * 1.6);
+			menuItem.frames = tex;
+			menuItem.animation.addByPrefix('idle', optionShit[1] + " basic", 24);
+			menuItem.animation.addByPrefix('selected', optionShit[1] + " white", 24);
+			menuItem.animation.play('idle');
+			menuItem.ID = 1;
+			menuItems.add(menuItem);
+			menuItem.scrollFactor.set();
+			menuItem.antialiasing = true;
+			
+var menuItem:FlxSprite = new FlxSprite(2, FlxG.height * 1.6);
+			menuItem.frames = tex;
+			menuItem.animation.addByPrefix('idle', optionShit[2] + " basic", 24);
+			menuItem.animation.addByPrefix('selected', optionShit[2] + " white", 24);
+			menuItem.animation.play('idle');
+			menuItem.ID = 2;
+			menuItems.add(menuItem);
+			menuItem.scrollFactor.set();
+			menuItem.antialiasing = true;
+			
+var menuItem:FlxSprite = new FlxSprite(3, FlxG.height * 1.6);
+			menuItem.frames = tex;
+			menuItem.animation.addByPrefix('idle', optionShit[3] + " basic", 24);
+			menuItem.animation.addByPrefix('selected', optionShit[3] + " white", 24);
+			menuItem.animation.play('idle');
+			menuItem.ID = 3;
 			menuItems.add(menuItem);
 			menuItem.scrollFactor.set();
 			menuItem.antialiasing = true;
@@ -115,7 +142,7 @@ class MainMenuState extends MusicBeatState
 
 		firstStart = false;
 
-		FlxG.camera.follow(camFollow, null, 0.60 * (60 / FlxG.save.data.fpsCap));
+	//	FlxG.camera.follow(camFollow, null, 0.60 * (60 / FlxG.save.data.fpsCap));
 
 		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, gameVer +  (Main.watermarks ? " FNF - " + kadeEngineVer + " Kade Engine" : ""), 12);
 		versionShit.scrollFactor.set();
@@ -219,7 +246,7 @@ class MainMenuState extends MusicBeatState
 
 		menuItems.forEach(function(spr:FlxSprite)
 		{
-			spr.screenCenter(X);
+		//	spr.screenCenter(X);
 		});
 	}
 	
